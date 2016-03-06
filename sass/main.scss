@@ -1,3 +1,13 @@
+@import "partials/variables";
+@import "partials/mixins";
+
+// html5 boilerplate
 @import "partials/normalize";
 @import "partials/html5_main";
+
+// Custom
+@import "partials/typography";
 @import "partials/site";
+
+// Keep placeholders at the end
+@import "partials/placeholders";

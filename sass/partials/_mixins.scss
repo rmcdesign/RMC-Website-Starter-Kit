@@ -1,0 +1,88 @@
+// For adding media queries inline
+// Then use gulp to clean up media queries to prevent duplication
+
+@mixin xs-only {
+  @media (max-width: #{$sm-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-down {
+  @media (max-width: #{$sm-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-up {
+  @media (min-width: #{$sm-width}) {
+    @content;
+  }
+}
+
+@mixin sm-only {
+  @media (min-width: #{$sm-width}) and (max-width: #{$md-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin md-down {
+  @media (max-width: #{$md-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media (min-width: #{$md-width}) {
+    @content;
+  }
+}
+
+@mixin md-only {
+  @media (min-width: #{$md-width}) and (max-width: #{$lg-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg-down {
+  @media (max-width: #{$lg-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media (min-width: #{$lg-width}) {
+    @content;
+  }
+}
+
+@mixin lg-only {
+  @media (min-width: #{$lg-width}) and (max-width: #{$xl-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin xl-down {
+  @media (max-width: #{$xl-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin xl-up {
+  @media (min-width: #{$xl-width}) {
+    @content;
+  }
+}
+
+
+
+// typography helpers
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
