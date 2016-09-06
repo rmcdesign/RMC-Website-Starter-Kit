@@ -1,7 +1,9 @@
 # RMC-Website-Starter-Kit
 A website starting point with gulp and sass
 
-TODO: 
+#TODO: 
 Create wordpress starter theme
+
 Add Grid mixins
+
 Upgrade node modules
