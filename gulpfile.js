@@ -13,21 +13,19 @@ var scripts = [
 var gulp = require( 'gulp' ),
     plumber = require( 'gulp-plumber' ),
     watch = require( 'gulp-watch' ),
-    //livereload = require( 'gulp-livereload' ),
     cssnano = require('gulp-cssnano'),
     jshint = require( 'gulp-jshint' ),
     stylish = require( 'jshint-stylish' ),
     gulpconcat = require('gulp-concat'),
     uglify = require( 'gulp-uglify' ),
     rename = require( 'gulp-rename' ),
-    //notify = require( 'gulp-notify' ),
-    //include = require( 'gulp-include' ),
     sass = require( 'gulp-sass' ),
     gcmq = require('gulp-group-css-media-queries'),
     postcss      = require('gulp-postcss'),
     sourcemaps   = require('gulp-sourcemaps'),
     autoprefixer = require('autoprefixer-core'),
     browserSync = require('browser-sync').create();
+    //livereload = require( 'gulp-livereload' );
 
 var onError = function( err ) {
   console.log( 'An error occurred:', err.message );
@@ -38,8 +36,7 @@ gulp.task( 'scss', function() {
   return gulp.src( scss_source )
     .pipe( plumber( { errorHandler: onError } ) )
     .pipe( sass() )
-    // clean up media queries
-    .pipe( gcmq() )
+    .pipe( gcmq() ) // clean up media queries
     .pipe( postcss([ autoprefixer({ browsers: ['last 5 versions'] }) ]) )
     .pipe( sourcemaps.init())
     .pipe( cssnano() )
